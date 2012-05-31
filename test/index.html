@@ -9,7 +9,8 @@
         </style>
     </head>
     <body>
-        <p>Some test</p>
+        <p>Hello World</p>
+        <div class="status"></div>
         <script src="../vendor/goog/base.js"></script>
         <script src="../build/deps.js"></script>
         <script>goog.require('fonzie');</script>
@@ -19,7 +20,8 @@
 
         <script>
             window.document.addEventListener('DOMContentLoaded', function() {
-                var fonzie = new Fonzie();
+                var status = document.querySelector('.status'),
+                    fonzie = new Fonzie();
 
                 fonzie.load({
                     family: 'PT Sans',
@@ -27,16 +29,16 @@
                     style: 'normal',
                     src: {
                         woff: 'fonts/ptsans/PTS55F_W.woff',
-                        ttf: 'fonts/ptsans/PTS55F_W.tatf'
+                        ttf: 'fonts/ptsans/PTS55F_W.ttf'
                     },
                     loading: function() {
-                        console.log('font loading');
+                        status.textContent = 'loading';
                     },
                     inactive: function() {
-                        console.log('font inactive');
+                        status.textContent = 'inactive';
                     },
                     active: function() {
-                        console.log('font active');
+                        status.textContent = 'active';
                     }
                 });
             }, false);
