@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            p {
+                font-family: 'PT Sans';
+            }
+        </style>
+    </head>
+    <body>
+        <p>Some test</p>
+        <script src="../vendor/goog/base.js"></script>
+        <script src="../build/deps.js"></script>
+        <script>goog.require('fonzie');</script>
+        <!--
+        <script src="../../build/fonzie.js"></script>
+        -->
+
+        <script>
+            window.document.addEventListener('DOMContentLoaded', function() {
+                var fonzie = new Fonzie();
+
+                fonzie.load({
+                    family: 'PT Sans',
+                    weight: 'normal',
+                    style: 'normal',
+                    src: {
+                        woff: 'fonts/ptsans/PTS55F_W.woff',
+                        ttf: 'fonts/ptsans/PTS55F_W.tatf'
+                    },
+                    loading: function() {
+                        console.log('font loading');
+                    },
+                    inactive: function() {
+                        console.log('font inactive');
+                    },
+                    active: function() {
+                        console.log('font active');
+                    }
+                });
+            }, false);
+        </script>
+    </body>
+</html>
