@@ -7,10 +7,18 @@
                 font-family: 'PT Sans';
             }
         </style>
+        <style>
+            @font-face {
+                font-family: 'PT Sans';
+                src: url(fonts/ptsans/PTS55F_W.woff) format('woff'), url(fonts/ptsans/PTS55F_W.ttf) format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
+        </style>
     </head>
     <body>
         <p>Hello World</p>
-        <div class="status"></div>
+        <div class="status">loading</div>
         <script src="../vendor/goog/base.js"></script>
         <script src="../build/deps.js"></script>
         <script>goog.require('fonzie');</script>
@@ -20,20 +28,9 @@
 
         <script>
             window.document.addEventListener('DOMContentLoaded', function() {
-                var status = document.querySelector('.status'),
-                    fonzie = new Fonzie();
+                var status = document.querySelector('.status');
 
-                fonzie.load({
-                    family: 'PT Sans',
-                    weight: 'normal',
-                    style: 'normal',
-                    src: {
-                        woff: 'fonts/ptsans/PTS55F_W.woff',
-                        ttf: 'fonts/ptsans/PTS55F_W.ttf'
-                    },
-                    loading: function() {
-                        status.textContent = 'loading';
-                    },
+                fonzie('PT Sans', {
                     inactive: function() {
                         status.textContent = 'inactive';
                     },
