@@ -1,10 +1,10 @@
 # Fonzie: a tiny @font-face loader
 
-only 3.9Kb (2.2Kb gzipped)
+Fonzie is a tiny `@font-face` loader/monitor (only 3.9Kb, and 2.2Kb gzipped) compatible with any web-font service. It will monitor when an external font applied to the page and notify you by a callback. Fonzie does not limit you in any way in where, when, or how you load your fonts. Fonzie also correctly handles the peculiar way Webkit loads external fonts transparently, so your font `active` and `inactive` callbacks are reliable. 
 
 ## How to use
 
-Include your `@font-face` rules per usual. The fonts can be supplied by either a font service such as [Google Webfonts](http://www.google.com/webfonts), [Typekit](http://typekit.com), and [Webtype](http://webtype.com) or be hosted by yourself. It doesn't matter where, when, or how you load your fonts. Fonzie will detect it regardless. You should set up monitoring for a single `font-family` at a time:
+Include your `@font-face` rules as usual. The fonts can be supplied by either a font service such as [Google Webfonts](http://www.google.com/webfonts), [Typekit](http://typekit.com), and [Webtype](http://webtype.com) or be hosted by yourself. It doesn't matter where, when, or how you load your fonts. Fonzie will detect it regardless. You should set up monitoring for a single `font-family` at a time:
 
     fonzie('Droid Sans', {
         active: function() {
