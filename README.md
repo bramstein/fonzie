@@ -1,6 +1,6 @@
 ## Fonzie: a tiny @font-face loader
 
-Fonzie is a tiny `@font-face` loader/monitor (only 3.9Kb, and 2.2Kb gzipped) compatible with any web-font service. It will monitor when an external font applied to the page and notify you by a callback. Fonzie does not limit you in any way in where, when, or how you load your fonts. Fonzie also correctly handles the peculiar way Webkit loads external fonts transparently, so your font `active` and `inactive` callbacks are reliable. 
+Fonzie is a tiny `@font-face` loader/monitor (only 3.9Kb, and 2.2Kb gzipped) compatible with any web-font service. It will monitor when an external font is applied to the page and notify you by a callback. Fonzie does not limit you in any way in where, when, or how you load your fonts. Fonzie also correctly handles the peculiar way Webkit loads external fonts transparently, so your font `active` and `inactive` callbacks are reliable. 
 
 ## How to use
 
